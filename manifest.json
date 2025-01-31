@@ -1,0 +1,25 @@
+{
+	"name": "YouTube Utils",
+	"action": {},
+	"manifest_version": 3,
+	"version": "0.1",
+	"description": "Useful youtube utils",
+	"permissions": [],
+	"host_permissions": ["*://*.youtube.com/*"],
+	"content_scripts": [{
+		"matches": [
+			"*://youtube.com/*",
+			"*://www.youtube.com/*",
+			"*://m.youtube.com/*"
+		],
+		"exclude_matches": ["*://*.music.youtube.com/*"],
+		"js": ["yt.js"]
+	}],
+	"externally_connectable": {
+		"matches": ["*://*.youtube.com/*"]
+	},
+	"web_accessible_resources": [{
+		"resources": ["yt.js"],
+		"matches": ["*://*.youtube.com/*"]
+	}]
+}
